@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OBD2 Corolla</string>
+    <string name="obd_connection_channel_name">OBD Connection</string>
+    <string name="obd_connection_channel_description">Shows OBD connection status</string>
+    <string name="obd_connected">Connected to OBD adapter</string>
+    <string name="obd_disconnected">OBD adapter disconnected</string>
+    <string name="action_disconnect">Disconnect</string>
+</resources>

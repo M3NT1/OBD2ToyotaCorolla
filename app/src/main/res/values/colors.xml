@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors - Toyota Red -->
+    <color name="primary">#FF0000</color>
+    <color name="primary_dark">#CC0000</color>
+    <color name="primary_light">#FF3333</color>
+    
+    <!-- Secondary Colors -->
+    <color name="secondary">#1E1E1E</color>
+    <color name="secondary_variant">#2D2D2D</color>
+    
+    <!-- Background -->
+    <color name="background">#121212</color>
+    <color name="surface">#1E1E1E</color>
+    <color name="surface_variant">#2D2D2D</color>
+    
+    <!-- On Colors -->
+    <color name="on_primary">#FFFFFF</color>
+    <color name="on_secondary">#FFFFFF</color>
+    <color name="on_background">#FFFFFF</color>
+    <color name="on_surface">#FFFFFF</color>
+    
+    <!-- Status Colors -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FFC107</color>
+    <color name="error">#F44336</color>
+    <color name="info">#2196F3</color>
+    
+    <!-- Gauge Colors -->
+    <color name="gauge_low">#4CAF50</color>
+    <color name="gauge_medium">#FFC107</color>
+    <color name="gauge_high">#FF5722</color>
+    <color name="gauge_critical">#F44336</color>
+    
+    <!-- Connection Status -->
+    <color name="connected">#4CAF50</color>
+    <color name="disconnected">#9E9E9E</color>
+    <color name="connecting">#FFC107</color>
+</resources>
