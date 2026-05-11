@@ -160,27 +160,56 @@ Ez a dokumentum részletesen leírja a Toyota Corolla E210 OBD2 diagnosztikai al
 
 ---
 
-## 7. User Interface
+## 7. Android Auto Integráció
 
-### 7.1 Navigáció
+### 7.1 CarAppService
+- `ToyotaCarAppService` - Fő belépési pont Android Auto-hoz
+- `ToyotaCarSession` - Session kezelés
+- AndroidManifest.xml-ben regisztrálva
+
+### 7.2 Képernyők Android Auto-n
+
+| Képernyő | Leírás |
+|----------|--------|
+| `CarMainMenuScreen` | Főmenü - Dashboard, Diagnosztika, Beállítások, Hibrid |
+| `CarDashboardScreen` | Valós idejű szenzor adatok (Speed, RPM, Temp, stb.) |
+| `CarDiagnosticsScreen` | DTC kategóriák és törlés |
+| `CarSettingsScreen` | Rejtett beállítások kategóriák |
+| `CarSettingsDoorLocksScreen` | Ajtó zárolás beállítások |
+| `CarSettingsLightingScreen` | Világítás beállítások |
+| `CarSettingsClimateScreen` | Klimatizálás beállítások |
+| `CarSettingsMultimediaScreen` | Multimédia beállítások |
+| `CarSettingsTssScreen` | Toyota Safety Sense beállítások |
+| `CarHybridScreen` | Hibrid rendszer monitorozás |
+
+### 7.3 Biztonsági Megfontolások
+- **Vezetés közben:** Csak olvasási műveletek engedélyezettek
+- **Álló jármű:** Beállítások módosítása megerősítés után
+- **Megerősítő dialog:** AlertDialog minden írási művelethez
+
+---
+
+## 8. User Interface (Telefon alkalmazás)
+
+### 8.1 Navigáció
 - Bottom Navigation (3 tab)
   - Dashboard
   - Diagnostics
   - Settings
 
-### 7.2 Dashboard nézet
+### 8.2 Dashboard nézet
 - Valós idejű műszerek (gauge-ok)
 - Lista nézet szenzor adatokkal
 - Grafikon megjelenítés idővel
 - Hybrid energy flow vizualizáció
 
-### 7.3 Diagnosztika nézet
+### 8.3 Diagnosztika nézet
 - DTC lista szűrhető listával
 - DTC részletek dialog
 - Törlés megerősítés dialog
 - Freeze frame megjelenítés
 
-### 7.4 Beállítások nézet
+### 8.4 Beállítások nézet
 - Kategória alapú csoportosítás
 - Toggle/Selection/Radio UI elemek
 - Gyári érték visszaállítás
@@ -188,62 +217,62 @@ Ez a dokumentum részletesen leírja a Toyota Corolla E210 OBD2 diagnosztikai al
 
 ---
 
-## 8. Hibakezelés
+## 9. Hibakezelés
 
-### 8.1 Kapcsolati Hibák
+### 9.1 Kapcsolati Hibák
 - Adapter nem található
 - Bluetooth kikapcsolva
 - Kapcsolat megszakadt
 - Időtúllépés
 
-### 8.2 OBD Hibák
+### 9.2 OBD Hibák
 - Nincs válasz (No Data)
 - Nem támogatott PID
 - Session hiba
 - authentikáció sikertelen
 
-### 8.3 Alkalmazás Hibák
+### 9.3 Alkalmazás Hibák
 - Memory warning
 - Storage telítettség
 - jogosultság hiány
 
 ---
 
-## 9. Adat Menedzsment
+## 10. Adat Menedzsment
 
-### 9.1 Lokális Tárolás
+### 10.1 Lokális Tárolás
 - Room database
 - SharedPreferences (beállítások)
 - JSON export/import
 
-### 9.2 Cache
+### 10.2 Cache
 - PID válaszok cache-elése
 - DTC előzmények
 - Beállítás backup
 
 ---
 
-## 10. Biztonság
+## 11. Biztonság
 
-### 10.1 Jogosultságok
+### 11.1 Jogosultságok
 - BLUETOOTH (kapcsolat)
 - BLUETOOTH_ADMIN (párosítás)
 - ACCESS_FINE_LOCATION (Android 12+)
 - ACCESS_COARSE_LOCATION
 
-### 10.2 Figyelmeztetések
+### 11.2 Figyelmeztetések
 - Minden írási művelet előtt figyelmeztetés
 - Gyári beállításokhoz visszaállítás lehetősége
 - Warranty disclaimer
 
 ---
 
-## 11. Jövőbeli Funkciók
+## 12. Jövőbeli Funkciók
 
-- [ ] Multi-vehicle támogatás
-- [ ] WiFi OBD adapter támogatás
-- [ ] Data logging és export
-- [ ] Widget támogatás
-- [ ] Apple CarPlay/Android Auto integráció
-- [ ] OBD2 írási funkció (CAN bus)
+- [ ] Data logging és export (CSV/JSON)
+- [ ] Widget támogatás (Glance API)
+- [ ] OBD2 írási funkció (CAN bus közvetlen)
 - [ ] Service reset (olaj, inspection)
+- [ ] WiFi OBD adapter támogatás
+- [ ] Multi-vehicle támogatás
+- [ ] Apple CarPlay/Android Auto teljes integráció

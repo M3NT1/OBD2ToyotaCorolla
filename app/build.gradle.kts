@@ -93,6 +93,12 @@ dependencies {
     // DataStore Preferences
     implementation("androidx.datastore:datastore-preferences:1.0.0")
     
+    // Android Auto (CarApp library)
+    implementation("androidx.car.app:app:1.4.0")
+    
+    // Navigation for Android Auto
+    implementation("androidx.navigation:navigation-car:1.4.0-alpha01")
+    
     // Testing
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
